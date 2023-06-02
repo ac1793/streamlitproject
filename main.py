@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 from io import StringIO
 
 uploaded_file = st.file_uploader("Choose a file")
@@ -31,11 +32,12 @@ if uploaded_file is not None:
         proportions = dataframe[option].value_counts(normalize=True) * 100
         formatted_proportions = proportions.apply(lambda x: '{:.2f}%'.format(x))
 
-        st.write(dataframe[option].describe, formatted_proportions)
-        my_plot = plt.bar(dataframe[option].value_counts().index, dataframe[option].value_counts())
+        st.write(formatted_proportions)
+        sns.barplot(x=proportions.index, y=proportions.values)
         plt.xlabel(option)
-        plt.ylabel('count')
-        st.pyplot(my_plot)
+        plt.ylabel('Proportions')
+        plt.title('Proportions of Categories')
+        st.pyplot()
 
     else:
         st.write(dataframe[option].describe())
