@@ -26,6 +26,6 @@ import streamlit as st
 
 option = st.selectbox(
     'How would you like to be contacted?',
-    (list(dataframe.columns)))
+    list(dataframe.columns))
 
 st.write('You selected:', option)
