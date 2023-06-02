@@ -33,11 +33,14 @@ if uploaded_file is not None:
         formatted_proportions = proportions.apply(lambda x: '{:.2f}%'.format(x))
 
         st.write(formatted_proportions)
-        sns.barplot(x=proportions.index, y=proportions.values)
-        plt.xlabel(option)
-        plt.ylabel('Proportions')
-        plt.title('Proportions of Categories')
-        st.pyplot()
+        fig, ax = plt.subplots()
+        ax.bar(proportions.index, proportions.values)
+        ax.set_xlabel(option)
+        ax.set_ylabel('Proportions')
+        ax.set_title('Proportions of Categories')
+        st.pyplot(fig)
 
     else:
         st.write(dataframe[option].describe())
+        sns.distplot(dataframe[option])
+        st.pyplot()
