@@ -18,10 +18,10 @@ if uploaded_file is not None:
 
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file)
-    st.write(dataframe)
+    st.write('Thanks for the dataframe!')
 
     option = st.selectbox(
     'How would you like to be contacted?',
-    ('Email', 'Home phone', 'Mobile phone'))
+    dataframe.columns)
 
     st.write('You selected:', option)
