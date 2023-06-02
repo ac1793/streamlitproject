@@ -42,5 +42,10 @@ if uploaded_file is not None:
 
     else:
         st.write(dataframe[option].describe())
-        sns.distplot(dataframe[option])
-        st.pyplot()
+        
+        fig, ax = plt.subplots()
+        sns.histplot(dataframe[option], ax=ax, kde=True)
+        ax.set_xlabel('Value')
+        ax.set_ylabel('Density')
+        ax.set_title('Distribution Plot')
+        st.pyplot(fig)
