@@ -24,7 +24,7 @@ if uploaded_file is not None:
 
 import streamlit as st
 
-option = st.selectbox(
+option = st.radio(
     'How would you like to be contacted?',
     dataframe.columns)
 
