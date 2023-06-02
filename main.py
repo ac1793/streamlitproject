@@ -25,3 +25,4 @@ if uploaded_file is not None:
     dataframe.columns)
 
     st.write('You selected:', option)
+    st.write(dataframe[option].describe())
