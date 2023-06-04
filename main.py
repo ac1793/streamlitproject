@@ -4,6 +4,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from io import StringIO
 
+st.set_page_config(
+    page_title="Aayushi's EDA",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    theme="light"  
+)
+
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     # To read file as bytes:
