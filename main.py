@@ -6,9 +6,6 @@ from io import StringIO
 
 st.set_page_config(
     page_title="Aayushi's EDA",
-    layout="wide",
-    initial_sidebar_state="expanded",
-    theme="light"  
 )
 
 uploaded_file = st.file_uploader("Choose a file")
