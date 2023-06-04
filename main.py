@@ -27,7 +27,7 @@ if uploaded_file is not None:
     st.write('Thanks for the dataframe!')
 
     option = st.selectbox(
-    'How would you like to be contacted?',
+    'Please select a column',
     dataframe.columns)
 
     st.write('You selected:', option)
