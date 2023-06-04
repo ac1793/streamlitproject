@@ -38,6 +38,7 @@ if uploaded_file is not None:
         ax.set_xlabel(option)
         ax.set_ylabel('Proportions')
         ax.set_title('Proportions of Categories')
+        ax.xticks(rotation = 90)
         st.pyplot(fig)
 
     else:
